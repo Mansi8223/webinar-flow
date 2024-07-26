@@ -1,0 +1,722 @@
+/* This files contains all the neccessary classes for manging the common structure*/
+
+/*
+3. Displays
+4. Positions
+5. Foreground Colors
+6. Background-colors
+7. Opacity
+8. Overflow
+9. Buttons
+10. Border Radius & Border
+11. gap
+12. Table Styling
+*/
+
+:root {
+  --primary: #73BA97;
+  --secondary: #4A9671;
+  --ternary: #32815A;
+  --blue: #51A47B;
+  --light-green: #BDC;
+  --light-blue: #EBF5F0;
+  --neutral-blue: #CADFFC;
+  --gray: #716C6A;
+  --neutral-gray: #908B89;
+  --success-main: #099C4F;
+  --success-light: #C6ECD9;
+  --success: #EBF7F1;
+  --error: #E84D3C;
+  --error-light: #FDF1EF;
+  --warn: #E69B23;
+  --warn-light: #FDF7EE;
+  --warn-dull: #716127;
+  --info-main: #296EC7;
+  --info: #EEF3FB;
+  --off-white: #E7E5E4;
+  --neutral: #F8F7F7;
+  --black: #252322;
+  --faded-black: #2D3648;
+  --white: #FFFFFF;
+}
+
+* {
+  box-sizing: border-box;
+  -moz-box-sizing: border-box;
+  -webkit-box-sizing: border-box;
+}
+
+html,
+body {
+  margin: 0;
+  padding: 0;
+  font-size: 16px;
+  line-height: 1.5;
+  box-sizing: border-box;
+  font-family: 'Albert Sans', sans-serif;
+  font-style: normal;
+  background-color: #FFFFFF;
+  scroll-behavior: smooth;
+}
+
+/* Display Starts */
+
+.d-flex {
+  display: flex;
+}
+
+.d-grid {
+  display: grid;
+}
+
+.d-block {
+  display: block;
+}
+
+.d-inline {
+  display: inline;
+}
+
+.d-inline-block {
+  display: inline-block;
+}
+
+.d-inline-flex {
+  display: inline-flex;
+}
+
+.d-inherit {
+  display: inherit;
+}
+
+.d-none {
+  display: none;
+}
+
+.d-flex-wrap {
+  flex-wrap: wrap;
+}
+
+.d-flex-row {
+  flex-direction: row;
+}
+
+.d-flex-column {
+  flex-direction: column;
+}
+
+.d-flex-row-reverse {
+  flex-direction: row-reverse;
+}
+
+.d-flex-column-reverse {
+  flex-direction: column-reverse;
+}
+
+.d-align-center {
+  align-items: center;
+}
+
+.d-align-start {
+  align-items: flex-start;
+}
+
+.d-align-end {
+  align-items: flex-end;
+}
+
+.d-align-baseline {
+  align-items: baseline;
+}
+
+.d-align-content-center {
+  align-content: center;
+}
+
+.d-align-content-start {
+  align-content: flex-start;
+}
+
+.d-align-content-end {
+  align-content: flex-end;
+}
+
+.d-justify-center {
+  justify-content: center;
+}
+
+.d-justify-start {
+  justify-content: flex-start;
+}
+
+.d-justify-end {
+  justify-content: flex-end;
+}
+
+.d-justify-space-between {
+  justify-content: space-between;
+}
+
+.d-justify-space-around {
+  justify-content: space-around;
+}
+
+.d-flex-100 {
+  flex: 1 1;
+}
+
+.self-center {
+  align-self: center;
+}
+
+.self-start {
+  align-self: flex-start;
+}
+
+/* Display Ends */
+
+/* Positions Starts */
+
+.p-relative {
+  position: relative;
+}
+
+.p-absolute {
+  position: absolute;
+}
+
+.p-fixed {
+  position: fixed;
+}
+
+.p-sticky {
+  position: sticky;
+}
+
+.p-static {
+  position: static;
+}
+
+.p-inherit {
+  position: inherit;
+}
+
+.p-initial {
+  position: initial;
+}
+
+.p-unset {
+  position: unset;
+}
+
+/* Positions Ends */
+
+/* Foreground Colors */
+.text-primary {
+  color: var(--primary);
+}
+
+.text-neutral-blue {
+  color: var(--neutral-blue);
+}
+
+.text-success {
+  color: var(--success-main);
+}
+
+.text-error {
+  color: var(--error);
+}
+
+.text-info {
+  color: var(--info-main);
+}
+
+.text-blue {
+  color: var(--blue);
+}
+
+.text-black {
+  color: var(--black);
+}
+
+.text-faded-black {
+  color: var(--faded-black);
+}
+
+.text-gray {
+  color: var(--gray);
+}
+
+.text-neutral-gray {
+  color: var(--neutral-gray);
+}
+
+.text-warn {
+  color: var(--warn);
+}
+
+.text-warn-dull {
+  color: var(--warn-dull);
+}
+
+.text-white {
+  color: var(--white);
+}
+
+/* End Foreground Colors */
+
+/* Background Colors */
+.bg-primary {
+  background-color: var(--primary);
+}
+
+.bg-secondary {
+  background-color: var(--secondary);
+}
+
+.bg-ternary {
+  background-color: var(--ternary);
+}
+
+.bg-success-main {
+  background-color: var(--success-main);
+}
+
+.bg-success {
+  background-color: var(--success);
+}
+
+.bg-light-green {
+  background-color: var(--light-green);
+}
+
+.bg-neutral {
+  background-color: var(--neutral);
+}
+
+.bg-blue {
+  background-color: var(--blue);
+}
+
+.bg-neutral-blue {
+  background-color: var(--neutral-blue);
+}
+
+.bg-error {
+  background-color: var(--error);
+}
+
+.bg-error-light {
+  background-color: var(--error-light);
+}
+
+.bg-warn {
+  background-color: var(--warn);
+}
+
+.bg-warn-light {
+  background-color: var(--warn-light);
+}
+
+.bg-info {
+  background-color: var(--info);
+}
+
+.bg-off-white {
+  background-color: var(--off-white);
+}
+
+.bg-white {
+  background-color: var(--white);
+}
+
+.bg-light-blue {
+  background-color: var(--light-blue);
+}
+
+/* End Background Colors */
+
+/* Opacity Starts */
+.op-1 {
+  opacity: 1;
+}
+
+.op-01 {
+  opacity: 0.1;
+}
+
+.op-03 {
+  opacity: 0.3;
+}
+
+.op-04 {
+  opacity: 0.4;
+}
+
+.op-05 {
+  opacity: 0.5;
+}
+
+.op-06 {
+  opacity: 0.6;
+}
+
+.op-07 {
+  opacity: 0.7;
+}
+
+.op-08 {
+  opacity: 0.8;
+}
+
+.op-09 {
+  opacity: 0.9;
+}
+
+/* Opacity Ends */
+
+/* Overflow Starts */
+.o-hidden {
+  overflow: hidden;
+}
+
+.ox-hidden {
+  overflow-x: hidden;
+}
+
+.oy-hidden {
+  overflow-y: hidden;
+}
+
+.o-scroll {
+  overflow: scroll;
+}
+
+.ox-scroll {
+  overflow-x: scroll;
+}
+
+.oy-scroll {
+  overflow-y: scroll;
+}
+
+.o-visible {
+  overflow: visible;
+}
+
+.ox-visible {
+  overflow-x: visible;
+}
+
+.oy-visible {
+  overflow-y: visible;
+}
+
+/* Overflow Ends */
+
+.object-contain {
+  object-fit: contain;
+}
+
+.object-cover {
+  object-fit: cover;
+}
+
+/* Buttons Starts */
+
+.btn {
+  font-style: normal;
+  font-weight: 600;
+  font-size: 15px;
+  line-height: 20px;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  padding-top: 12px;
+  padding-bottom: 12px;
+  cursor: pointer;
+  border-radius: 12px;
+  border: none;
+}
+
+.btn.btn-primary {
+  background-color: var(--primary);
+  color: var(--white);
+}
+
+.btn.btn-primary.btn-primary-inactive {
+  opacity: 0.5;
+}
+
+.btn.btn-secondary {
+  background-color: var(--neutral);
+  color: var(--gray);
+}
+
+.btn.btn-ternary {
+  background-color: var(--light-blue);
+  color: var(--blue);
+}
+
+.btn-red {
+  background-color: var(--error);
+  color: var(--white);
+}
+
+.btn-green {
+  background-color: var(--success-main);
+  color: var(--white);
+}
+
+/* Button Ends */
+
+a {
+  text-decoration: none;
+  cursor: pointer;
+  color: inherit;
+}
+
+span {
+  font-size: inherit;
+  color: inherit;
+  line-height: inherit;
+  font-family: inherit;
+}
+
+ul,
+ol {
+  padding: 0 0 0 1.6rem;
+  margin: 0 0 1.6rem 0;
+}
+
+.list-style-none {
+  list-style: none;
+}
+
+div {
+  font-size: 1.6rem;
+}
+
+.cursor-pointer {
+  cursor: pointer;
+}
+
+.user-select-none {
+  user-select: none;
+}
+
+/* Border Styling Starts */
+.rounded-6 {
+  border-radius: 6px;
+}
+
+.rounded-8 {
+  border-radius: 8px;
+}
+
+.rounded-12 {
+  border-radius: 12px;
+}
+
+.rounded-16 {
+  border-radius: 16px;
+}
+
+.rounded-20 {
+  border-radius: 20px;
+}
+
+.rounded {
+  border-radius: 100px;
+}
+
+.border {
+  border: 1px solid var(--off-white);
+}
+
+.border-bottom {
+  border-bottom: 1px solid var(--off-white);
+}
+
+.border-bottom-2px {
+  border-bottom: 2px solid var(--off-white);
+}
+
+.border-bottom-primary {
+  border-bottom: 3px solid var(--primary);
+}
+
+.border-neutral {
+  border: 2px solid var(--neutral);
+}
+
+.border-right-1px {
+  border: 1px solid var(--off-white);
+}
+
+.border-right {
+  border-right: 2px solid var(--off-white);
+}
+
+.border-2px {
+  border: 2px solid var(--off-white);
+}
+
+.border-2px-primary {
+  border: 2px solid var(--primary);
+}
+
+.border-warn {
+  border: 1px solid var(--warn);
+}
+
+.border-dashed {
+  border: 1.5px dashed var(--off-white);
+}
+
+.border-dashed-gray {
+  border: 1.5px dashed var(--neutral-gray);
+}
+
+.border-wide {
+  border: 1.5px solid var(--off-white);
+}
+
+.border-none {
+  border: none;
+}
+
+/* Border Stying Ends */
+
+
+/*gap start*/
+.gap-1 {
+  gap: 0.25rem;
+}
+
+.gap-2 {
+  gap: 0.5rem;
+}
+
+.gap-3 {
+  gap: 0.75rem;
+}
+
+.gap-4 {
+  gap: 1rem;
+}
+
+.gap-5 {
+  gap: 1.25rem;
+}
+
+.gap-6 {
+  gap: 1.5rem;
+}
+
+.gap-7 {
+  gap: 1.75rem;
+}
+
+.gap-8 {
+  gap: 2rem;
+}
+
+.gap-9 {
+  gap: 2.25rem;
+}
+
+.gap-10 {
+  gap: 2.5rem;
+}
+/*gap end*/
+
+textarea,
+input {
+  font-size: 15px;
+  font-family: 'Albert Sans', sans-serif;
+  font-style: normal;
+  font-weight: 400;
+  line-height: 20px;
+  color: var(--black);
+  border-radius: 8px;
+  border: 1.5px solid var(--off-white);
+  background: #FFF;
+  outline: none;
+  resize: none;
+}
+
+textarea::placeholder,
+input::placeholder {
+  font-size: 15px;
+  font-family: 'Albert Sans', sans-serif;
+  font-style: normal;
+  font-weight: 400;
+  line-height: 20px;
+  color: var(--neutral-gray);
+}
+
+.box-shadow {
+  box-shadow: 0px 4px 12px 0px rgba(0, 0, 0, 0.10);
+}
+
+.tab-box-shadow {
+  box-shadow: 0px 2px 4px 0px rgba(0, 0, 0, 0.08);
+}
+
+/* table styling */
+table,
+thead,
+tbody,
+tr,
+th,
+td {
+  border: none;
+  border-collapse: collapse;
+  border-spacing: 0;
+}
+
+.table-wrapper {
+  height: auto;
+  border: 1px solid var(--off-white);
+}
+
+.table {
+  width: 100%;
+  min-width: 723px;
+  max-width: 100%;
+  background-color: var(--white);
+}
+
+.table-header {
+  height: 44px;
+  top: 0;
+  position: sticky;
+  z-index: 2;
+  color: var(--gray);
+  border-bottom: 1px solid var(--off-white);
+}
+
+.table-header>th {
+  font-weight: 400;
+  font-size: 15px;
+  line-height: 20px;
+}
+
+.table-body {
+  font-size: 15px;
+  font-weight: 400;
+  line-height: 20px;
+}
+
+.table-body>tr {
+  height: 68px;
+  border-bottom: 1px solid var(--off-white);
+}
+.table-body>tr>td{
+  padding-right: 20px;
+}
+.table-body>tr:last-child {
+  border-bottom: none;
+}

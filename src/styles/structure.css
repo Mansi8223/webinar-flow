@@ -1,0 +1,69 @@
+/* These classes have been used for structure your code in more convinent approach.
+Do use following 12 column Grid structure in your projects.
+
+Basic Terms:
+- 100% of screen = 12 columns
+- 1 columns = (100% / 12)
+- row: for using columns you need to add row in parent div
+- col: stands for column and it is universal for all
+- offset: for adding the margin from left
+
+Breakpoints
+- col: universal
+- col-xs: min-width 360px
+- col-sm: min-width 568px
+- col-md: min-width 768px
+- col-lg: min-width 991px
+- col-xl: min-width 1200px
+- col-xxl: min-width 1400px 
+- col-xxxl: min-width 1600px
+- col-xxxxl: min-width 1920px
+
+*/
+.row{
+    display: flex;
+    flex-wrap: wrap;
+}
+
+@media screen and (min-width:320px){
+    .col-6 {
+        width: calc(100% / 12 * 6);
+    }
+    .col-11{
+        width:calc(100% / 12 * 11);
+    }
+    .col-12{
+        width:calc(100% / 12 * 12);
+    }
+
+}
+@media screen and (min-width:359.98px) {
+    .col-xs-11 {
+        width: calc(100% / 12 * 11);
+    }
+}
+@media screen and (min-width:567.98px) {
+    .col-sm-7 {
+        width: calc(100% / 12 * 7);
+    }
+}
+@media screen and (min-width:767.98px) {
+    .col-md-6 {
+        width: calc(100% / 12 * 6);
+    }
+}
+@media screen and (min-width:991.98px) {
+    .col-lg-5 {
+        width: calc(100% / 12 * 5);
+    }
+}
+@media screen and (min-width:1199.98px) {
+    .col-xl-5 {
+        width: calc(100% / 12 * 5);
+    }
+}
+@media screen and (min-width:1399.98px) {
+    .col-xxl-4 {
+        width: calc(100% / 12 * 4);
+    }
+}

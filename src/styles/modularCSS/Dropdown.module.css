@@ -1,0 +1,10 @@
+.dropdownBtn{
+    width: 220px;
+}
+.dropdownList{
+    width: 220px;
+    z-index: 3;
+}
+.dropdownItems:hover{
+    background-color: var(--light-blue);
+}
