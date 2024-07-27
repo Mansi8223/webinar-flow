@@ -116,7 +116,7 @@ function WebinarModal(props) {
           </svg>
         </div>
       </div>
-      <section className="d-flex d-flex-column gap-6 p-7 border-bottom">
+      <section className="d-flex d-flex-column gap-6 p-7">
         {/* instructor details */}
         <div className="col-12 d-flex gap-6">
           <svg
@@ -355,7 +355,9 @@ function WebinarModal(props) {
           </div>
         </div>
       </section>
-      <div className="d-flex gap-4 p-5">
+      <div
+        className={`${styles.modalFooter} d-flex gap-4 p-5 bg-white border-top`}
+      >
         {/* add and edit button */}
         <button type="submit" className="btn btn-primary rounded-12">
           {props.functionality == "add" ? "Create webinar" : "Save Webinar"}

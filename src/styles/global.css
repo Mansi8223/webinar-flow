@@ -496,6 +496,10 @@ div {
   border-bottom: 1px solid var(--off-white);
 }
 
+.border-top{
+  border-top: 1px solid var(--off-white);
+}
+
 .border-bottom-2px {
   border-bottom: 2px solid var(--off-white);
 }
