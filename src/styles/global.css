@@ -15,7 +15,7 @@
 :root {
   --primary: #0E51F1;
   --secondary: #4A9671;
-  --light-blue: #EBF5F0;
+  --light-blue: #E7F1FE;
   --gray: #716C6A;
   --neutral-gray: #908B89;
   --error: #D14040;;
@@ -211,16 +211,8 @@ body {
   color: var(--neutral-blue);
 }
 
-.text-success {
-  color: var(--success-main);
-}
-
 .text-error {
   color: var(--error);
-}
-
-.text-info {
-  color: var(--info-main);
 }
 
 .text-blue {
@@ -241,14 +233,6 @@ body {
 
 .text-neutral-gray {
   color: var(--neutral-gray);
-}
-
-.text-warn {
-  color: var(--warn);
-}
-
-.text-warn-dull {
-  color: var(--warn-dull);
 }
 
 .text-white {
@@ -300,18 +284,6 @@ body {
 
 .bg-error-light {
   background-color: var(--error-light);
-}
-
-.bg-warn {
-  background-color: var(--warn);
-}
-
-.bg-warn-light {
-  background-color: var(--warn-light);
-}
-
-.bg-info {
-  background-color: var(--info);
 }
 
 .bg-off-white {
