@@ -2,7 +2,7 @@ import React from "react";
 
 function Modal(props) {
   return (
-    <div className="d-flex d-flex-column d-align-end gap-6">
+    <div className="d-flex d-flex-column d-align-end gap-6 p-7">
       <div className="col-12 d-flex d-flex-column d-align-start gap-3">
         <div className="col-12 d-flex d-align-center d-justify-space-between gap-2">
           <h4 className="f-600 l-24 text-black text-left">{props.title}</h4>

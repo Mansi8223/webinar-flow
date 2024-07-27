@@ -1,6 +1,7 @@
 import React, { useState, useEffect, useRef } from "react";
 import styles from "../styles/modularCSS/Dropdown.module.css";
 
+//listner to check outside click
 function useOutsideAlerter(ref, handler) {
   useEffect(() => {
     function handleClickOutside(event) {
@@ -19,7 +20,8 @@ function Dropdown(props) {
   const [selected, setSelected] = useState(props.defaultValue);
   const [open, setOpen] = useState(false);
   const wrapperRef = useRef(null);
-  const openHandler = () => setOpen((prev) => !prev);
+
+  const openHandler = () => setOpen((prev) => !prev); //open toggle state handler
   useOutsideAlerter(wrapperRef, openHandler);
   return (
     <div className="d-flex d-align-center gap-1">
@@ -49,6 +51,7 @@ function Dropdown(props) {
             />
           </svg>
         </div>
+        {/* popUp */}
         {open && (
           <div
             ref={wrapperRef}

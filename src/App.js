@@ -3,11 +3,9 @@ import { ToastContainer } from "react-toastify";
 import { toastError, toastSuccess } from "./Components/Toasters";
 // component imports
 import Base from "./Base/Base";
-import Table from "./Components/Table";
 import Header from "./Layout/Header";
-import WebinarModal from "./Modals/WebinarModal";
-import ModalWrapper from "./Modals/ModalWrapper";
 import Dropdown from "./Components/Dropdown";
+import Card from "./Components/Card";
 // style imports
 import "./styles/gap.css";
 import "./styles/global.css";
@@ -20,7 +18,6 @@ function App() {
   const [originalData, setOriginalData] = useState([]); // Complete data source
   const [topicArr, setTopicArr] = useState([]);
   const [selectedTopic, setSelectedTopic] = useState("All");
-  const [openAddModal, setOpenAddModal] = useState(false);
 
   const getDefaultData = async () => {
     // Fetch default data from JSON for initial UI presentation
@@ -45,6 +42,23 @@ function App() {
     setSearchTerm(e.target.value);
   };
 
+  const searchByTopicHandler = (topic) => {
+    setSelectedTopic(topic);
+    if (topic === "All") {
+      setData(originalData); // Show all webinars
+    } else {
+      const filteredData = originalData.filter((val) => val.topic === topic);
+      setData(filteredData);
+    }
+  };
+
+  const topicValidator = (topicToCheck, webinars) => {
+    const topicExists = webinars.some(
+      (webinar) => webinar.topic === topicToCheck
+    );
+    return topicExists;
+  };
+
   const addHandler = (newObj) => {
     // Adding new entry in the existing data
     const updatedData = [newObj, ...data];
@@ -57,24 +71,53 @@ function App() {
       setTopicArr([...new Set(tempTopics)]); // Use Set to avoid duplicates
     }
 
-    setOpenAddModal(false);
     toastSuccess("Webinar added");
   };
 
-  const searchByTopicHandler = (topic) => {
-    setSelectedTopic(topic);
-    if (topic === "All") {
-      setData(originalData); // Show all webinars
-    } else {
-      const filteredData = originalData.filter((val) => val.topic === topic);
-      setData(filteredData);
+  const editHandler = (index, updatedObj) => {
+    // Update the data at the specific index
+    const updatedData = [...data];
+    updatedData[index] = updatedObj;
+
+    // Update the state with the new data
+    setData(updatedData);
+    setOriginalData(updatedData);
+
+    // Check if the new topic is already in the topic array
+    if (!topicArr.includes(updatedObj.topic)) {
+      // Add new topic to the dropdown array
+      setTopicArr([...new Set([...topicArr, updatedObj.topic])]);
     }
   };
 
+  const deleteHandler = (index, itemToDelete) => {
+    //topic from entry to be deleted
+    let deletedItemsTopic = itemToDelete.topic;
+
+    // Update the data to display
+    let arr = data.filter((_, i) => i !== index);
+    setData(arr);
+
+    // Update the original data
+    let originalArr = originalData.filter((_, i) => i !== index);
+    setOriginalData(originalArr);
+
+    // Check if the new topic is already in the topic array
+    let topicExists = topicValidator(deletedItemsTopic, originalArr);
+    // remove topic from the dropdown array
+    if (!topicExists) {
+      const updatedTopics = topicArr.filter(
+        (topic) => topic !== deletedItemsTopic
+      );
+      setTopicArr([...new Set(updatedTopics)]);
+    }
+
+    toastSuccess("Webinar deleted!");
+  };
   return (
     <Fragment>
       <Base>
-        <Header title="Webinars" />
+        <Header title="Webinars" addHandler={addHandler} />
         <div className="d-flex d-flex-column gap-5 pt-5 pb-5 pl-10 pr-10">
           <div className="d-flex d-justify-space-between">
             <div className="d-flex gap-3">
@@ -93,7 +136,7 @@ function App() {
                 </svg>
                 <input
                   className="bg-white border-none"
-                  placeholder="Search"
+                  placeholder="Search for webinar"
                   type="text"
                   value={searchTerm}
                   onChange={searchTermHandler}
@@ -107,48 +150,46 @@ function App() {
                 handler={searchByTopicHandler}
                 defaultValue={selectedTopic}
               />
-              <button
-                onClick={() => setOpenAddModal(true)}
-                className="btn btn-primary pl-5 pr-5 pt-2 pb-2 gap-2"
-              >
-                <svg
-                  xmlns="http://www.w3.org/2000/svg"
-                  width="20"
-                  height="20"
-                  viewBox="0 0 20 20"
-                  fill="none"
-                >
-                  <path
-                    d="M9.16663 9.16699V4.16699H10.8333V9.16699H15.8333V10.8337H10.8333V15.8337H9.16663V10.8337H4.16663V9.16699H9.16663Z"
-                    fill="white"
-                  />
-                </svg>
-                Add Webinar
-              </button>
             </div>
           </div>
-          <Table
-            data={data}
-            setData={setData}
-            originalData={originalData}
-            setOriginalData={setOriginalData}
-            searchTerm={searchTerm}
-            topicArr={topicArr}
-            setTopicArr={setTopicArr}
-          />
+          <div className="d-grid d-grid-frame-3 gap-6">
+            {data
+              .filter((val) => {
+                if (searchTerm === "") {
+                  return val;
+                } else if (
+                  val?.title
+                    ?.toLowerCase()
+                    ?.includes(searchTerm?.toLowerCase()) ||
+                  val?.topic
+                    .toLowerCase()
+                    ?.includes(searchTerm?.toLowerCase()) ||
+                  val?.instructorName
+                    ?.toLowerCase()
+                    ?.includes(searchTerm?.toLowerCase()) ||
+                  val?.instructorRole
+                    ?.toLowerCase()
+                    ?.includes(searchTerm?.toLowerCase()) ||
+                  val?.instructorCompany
+                    ?.toLowerCase()
+                    ?.includes(searchTerm?.toLowerCase())
+                ) {
+                  return val;
+                }
+                return null;
+              })
+              .map((item, index) => (
+                <Card
+                  item={item}
+                  index={index}
+                  editHandler={editHandler}
+                  deleteHandler={deleteHandler}
+                />
+              ))}
+          </div>
         </div>
       </Base>
-      {/* add modal */}
-      {openAddModal && (
-        <ModalWrapper>
-          <WebinarModal
-            modalTitle="Add Webinar"
-            functionality="add"
-            closeHandler={() => setOpenAddModal(false)}
-            handler={addHandler}
-          />
-        </ModalWrapper>
-      )}
+
       <ToastContainer />
     </Fragment>
   );

@@ -10,32 +10,19 @@
 9. Buttons
 10. Border Radius & Border
 11. gap
-12. Table Styling
 */
 
 :root {
-  --primary: #73BA97;
+  --primary: #0E51F1;
   --secondary: #4A9671;
-  --ternary: #32815A;
-  --blue: #51A47B;
-  --light-green: #BDC;
   --light-blue: #EBF5F0;
-  --neutral-blue: #CADFFC;
   --gray: #716C6A;
   --neutral-gray: #908B89;
-  --success-main: #099C4F;
-  --success-light: #C6ECD9;
-  --success: #EBF7F1;
-  --error: #E84D3C;
-  --error-light: #FDF1EF;
-  --warn: #E69B23;
-  --warn-light: #FDF7EE;
-  --warn-dull: #716127;
-  --info-main: #296EC7;
-  --info: #EEF3FB;
+  --error: #D14040;;
+  --error-light: #F9E8E8;
   --off-white: #E7E5E4;
   --neutral: #F8F7F7;
-  --black: #252322;
+  --black: #0E1013;
   --faded-black: #2D3648;
   --white: #FFFFFF;
 }
@@ -67,6 +54,10 @@ body {
 
 .d-grid {
   display: grid;
+}
+
+.d-grid-frame-3{
+  grid-template-columns: repeat(3, 1fr);
 }
 
 .d-block {
@@ -436,37 +427,31 @@ body {
   padding-top: 12px;
   padding-bottom: 12px;
   cursor: pointer;
-  border-radius: 12px;
   border: none;
 }
 
 .btn.btn-primary {
+  width: 167px;
   background-color: var(--primary);
   color: var(--white);
-}
-
-.btn.btn-primary.btn-primary-inactive {
-  opacity: 0.5;
+  box-shadow: 0px 8px 20px -8px #0E51F1;
 }
 
 .btn.btn-secondary {
-  background-color: var(--neutral);
-  color: var(--gray);
+  color: var(--primary);
+  background-color: transparent;
 }
 
-.btn.btn-ternary {
-  background-color: var(--light-blue);
-  color: var(--blue);
+.btn.btn-error {
+  width: 90px;
+  background-color: var(--error-light);
+  color: var(--error);
 }
 
 .btn-red {
   background-color: var(--error);
   color: var(--white);
-}
-
-.btn-green {
-  background-color: var(--success-main);
-  color: var(--white);
+  border-radius: 12px;
 }
 
 /* Button Ends */
@@ -559,28 +544,8 @@ div {
   border-right: 2px solid var(--off-white);
 }
 
-.border-2px {
-  border: 2px solid var(--off-white);
-}
-
-.border-2px-primary {
-  border: 2px solid var(--primary);
-}
-
-.border-warn {
-  border: 1px solid var(--warn);
-}
-
 .border-dashed {
   border: 1.5px dashed var(--off-white);
-}
-
-.border-dashed-gray {
-  border: 1.5px dashed var(--neutral-gray);
-}
-
-.border-wide {
-  border: 1.5px solid var(--off-white);
 }
 
 .border-none {
@@ -663,60 +628,4 @@ input::placeholder {
 
 .tab-box-shadow {
   box-shadow: 0px 2px 4px 0px rgba(0, 0, 0, 0.08);
-}
-
-/* table styling */
-table,
-thead,
-tbody,
-tr,
-th,
-td {
-  border: none;
-  border-collapse: collapse;
-  border-spacing: 0;
-}
-
-.table-wrapper {
-  height: auto;
-  border: 1px solid var(--off-white);
-}
-
-.table {
-  width: 100%;
-  min-width: 723px;
-  max-width: 100%;
-  background-color: var(--white);
-}
-
-.table-header {
-  height: 44px;
-  top: 0;
-  position: sticky;
-  z-index: 2;
-  color: var(--gray);
-  border-bottom: 1px solid var(--off-white);
-}
-
-.table-header>th {
-  font-weight: 400;
-  font-size: 15px;
-  line-height: 20px;
-}
-
-.table-body {
-  font-size: 15px;
-  font-weight: 400;
-  line-height: 20px;
-}
-
-.table-body>tr {
-  height: 68px;
-  border-bottom: 1px solid var(--off-white);
-}
-.table-body>tr>td{
-  padding-right: 20px;
-}
-.table-body>tr:last-child {
-  border-bottom: none;
 }

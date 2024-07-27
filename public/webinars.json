@@ -1,62 +1,38 @@
 [
   {
+    "instructorName": "John Doe",
+    "instructorRole": "Senior Developer",
+    "instructorCompany": "Tech Solutions Inc.",
+    "instructorImage": "",
+    "title": "Advanced JavaScript Workshop",
+    "topic": "JavaScript Best Practices",
+    "date": "2024-07-26",
+    "startTime": "12:10",
+    "endTime": "14:10",
+    "color": "#0E51F1"
+  },
+  {
+    "instructorName": "Jane Smith",
+    "instructorRole": "Data Scientist",
+    "instructorCompany": "DataWorks",
+    "instructorImage": "",
     "title": "Introduction to Machine Learning",
-    "description": "An introductory webinar covering the basics of machine learning, including key concepts and algorithms.",
-    "topic": "Machine Learning",
-    "date": "2024-08-01T10:00"
+    "topic": "Machine Learning Basics",
+    "date": "2024-07-27",
+    "startTime": "09:00",
+    "endTime": "11:00",
+    "color": "#FF5733"
   },
   {
-    "title": "Advanced JavaScript Techniques",
-    "description": "A deep dive into advanced JavaScript features and techniques for experienced developers.",
-    "topic": "Programming",
-    "date": "2024-08-05T14:00"
-  },
-  {
-    "title": "Digital Marketing Strategies for 2024",
-    "description": "Learn the latest strategies and tools for effective digital marketing in the coming year.",
-    "topic": "Marketing",
-    "date": "2024-08-10T16:30"
-  },
-  {
-    "title": "Building Resilient Web Applications",
-    "description": "Best practices and techniques for building web applications that can handle high traffic and avoid downtime.",
-    "topic": "Web Development",
-    "date": "2024-08-15T09:00"
-  },
-  {
-    "title": "Data Science with Python",
-    "description": "An in-depth look at how Python can be used for data science, including popular libraries and frameworks.",
-    "topic": "Data Science",
-    "date": "2024-08-20T11:45"
-  },
-  {
-    "title": "Effective Leadership in Tech",
-    "description": "Key skills and strategies for leading teams and projects in the technology sector.",
-    "topic": "Leadership",
-    "date": "2024-08-25T13:30"
-  },
-  {
-    "title": "Cloud Computing Essentials",
-    "description": "An overview of cloud computing, including major providers, key services, and how to get started.",
-    "topic": "Cloud Computing",
-    "date": "2024-08-30T15:00"
-  },
-  {
-    "title": "Cybersecurity Basics",
-    "description": "Introduction to cybersecurity, covering fundamental concepts and best practices for protecting systems and data.",
-    "topic": "Cybersecurity",
-    "date": "2024-09-01T08:30"
-  },
-  {
-    "title": "AI in Healthcare",
-    "description": "Exploring the applications of artificial intelligence in the healthcare industry, including case studies and future trends.",
-    "topic": "Artificial Intelligence",
-    "date": "2024-09-05T10:15"
-  },
-  {
-    "title": "Blockchain Beyond Bitcoin",
-    "description": "Understanding the broader applications of blockchain technology beyond cryptocurrency, including smart contracts and supply chain management.",
-    "topic": "Blockchain",
-    "date": "2024-09-10T14:45"
+    "instructorName": "Emily Johnson",
+    "instructorRole": "UX Designer",
+    "instructorCompany": "Creative Minds",
+    "instructorImage": "",
+    "title": "User Experience Design Principles",
+    "topic": "UX/UI Design",
+    "date": "2024-07-28",
+    "startTime": "14:00",
+    "endTime": "16:00",
+    "color": "#33A1FF"
   }
 ]
