@@ -200,36 +200,39 @@ function WebinarModal(props) {
               <div className="col-6 d-flex d-flex-column gap-4">
                 <div className="d-flex d-flex-column gap-2">
                   <h6 className="f-500 l-20 text-black">Instructor Image</h6>
-                  {instructorImage ? (
-                    <img
-                      className="object-cover rounded-8"
-                      width={135}
-                      height={135}
-                      src={instructorImage}
-                      alt="instructor-image"
-                    />
-                  ) : (
-                    <div
-                      onClick={(event) => {
-                        event.preventDefault();
-                        fileInputRef.current.click();
-                      }}
-                      className={`${styles.imageContainer} d-flex d-align-center d-justify-center border-dashed rounded-8`}
-                    >
-                      <svg
-                        width="31"
-                        height="31"
-                        viewBox="0 0 31 31"
-                        fill="none"
-                        xmlns="http://www.w3.org/2000/svg"
+                  <div
+                    onClick={(event) => {
+                      event.preventDefault();
+                      fileInputRef.current.click();
+                    }}
+                  >
+                    {instructorImage ? (
+                      <img
+                        className="object-cover rounded-8"
+                        width={135}
+                        height={135}
+                        src={instructorImage}
+                        alt="instructor-image"
+                      />
+                    ) : (
+                      <div
+                        className={`${styles.imageContainer} d-flex d-align-center d-justify-center border-dashed rounded-8`}
                       >
-                        <path
-                          d="M13.3048 30.4726V0.385933H17.3687V30.4726H13.3048ZM0.281531 17.4493V13.4092H30.392V17.4493H0.281531Z"
-                          fill="#636973"
-                        />
-                      </svg>
-                    </div>
-                  )}
+                        <svg
+                          width="31"
+                          height="31"
+                          viewBox="0 0 31 31"
+                          fill="none"
+                          xmlns="http://www.w3.org/2000/svg"
+                        >
+                          <path
+                            d="M13.3048 30.4726V0.385933H17.3687V30.4726H13.3048ZM0.281531 17.4493V13.4092H30.392V17.4493H0.281531Z"
+                            fill="#636973"
+                          />
+                        </svg>
+                      </div>
+                    )}
+                  </div>
                 </div>
                 <input
                   type="file"
