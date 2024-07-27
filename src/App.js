@@ -119,7 +119,7 @@ function App() {
       <Base>
         <Header title="Webinars" addHandler={addHandler} />
         <div className="d-flex d-flex-column gap-5 pt-5 pb-5 pl-10 pr-10">
-          <div className="d-flex d-justify-space-between">
+          <div className="d-flex d-flex-wrap gap-3 d-justify-space-between">
             <div className="d-flex gap-3">
               <div className="d-flex d-align-center gap-2 pl-3 pr-3 pt-2 pb-2 bg-white border rounded-8">
                 <svg
@@ -152,7 +152,7 @@ function App() {
               />
             </div>
           </div>
-          <div className="d-grid d-grid-frame-3 gap-6">
+          <div className="d-grid responsive-grid gap-6">
             {data
               .filter((val) => {
                 if (searchTerm === "") {

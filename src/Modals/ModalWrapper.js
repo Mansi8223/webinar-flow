@@ -7,7 +7,9 @@ function ModalWrapper(props) {
       <div
         className={`col-12 d-flex d-justify-center ${styles["modal-verify"]}`}
       >
-        <div className={`col-6 bg-white rounded-8`}>{props.children}</div>
+        <div className={`col-11 col-xl-6 bg-white rounded-8`}>
+          {props.children}
+        </div>
       </div>
     </div>
   );

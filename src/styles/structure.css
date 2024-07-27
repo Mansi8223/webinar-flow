@@ -35,31 +35,55 @@ Breakpoints
     .col-12{
         width:calc(100% / 12 * 12);
     }
+    .form-inputs {
+        flex-direction: column;
+    }
 
 }
 @media screen and (min-width:359.98px) {
     .col-xs-11 {
         width: calc(100% / 12 * 11);
     }
+    .responsive-grid{
+        grid-template-columns: repeat(1, 1fr);
+    }
 }
 @media screen and (min-width:567.98px) {
     .col-sm-7 {
         width: calc(100% / 12 * 7);
+    }
+    .responsive-grid {
+        grid-template-columns: repeat(1, 1fr);
     }
 }
 @media screen and (min-width:767.98px) {
     .col-md-6 {
         width: calc(100% / 12 * 6);
     }
+        .responsive-grid {
+            grid-template-columns: repeat(2, 1fr);
+        }
 }
 @media screen and (min-width:991.98px) {
     .col-lg-5 {
         width: calc(100% / 12 * 5);
     }
+    .col-lg-6 {
+        width: calc(100% / 12 * 6);
+    }
+    .form-inputs {
+        flex-direction: row;
+    }
 }
 @media screen and (min-width:1199.98px) {
     .col-xl-5 {
         width: calc(100% / 12 * 5);
+    }
+        .col-xl-6 {
+            width: calc(100% / 12 * 6);
+        }
+    .responsive-grid {
+        grid-template-columns: repeat(3, 1fr);
     }
 }
 @media screen and (min-width:1399.98px) {

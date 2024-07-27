@@ -94,7 +94,9 @@ function WebinarModal(props) {
 
   return (
     <form onSubmit={submitHandler} className="d-flex d-flex-column">
-      <div className="d-flex d-align-center d-justify-space-between p-5 border-bottom">
+      <div
+        className={`${styles.header} d-flex d-align-center d-justify-space-between p-5 border-bottom bg-white`}
+      >
         <span className="h4 f-600 l-28 text-black">{props.modalTitle}</span>
         <div
           onClick={() => props.closeHandler()}
@@ -155,8 +157,8 @@ function WebinarModal(props) {
           </svg>
           <div className="col-12 d-flex d-flex-column gap-5">
             <span className="h5 f-600 l-28 text-black">Instructor Details</span>
-            <div className="d-flex d-justify-space-between gap-6">
-              <div className="col-6 d-flex d-flex-column gap-6">
+            <div className="form-inputs d-flex d-justify-space-between gap-6">
+              <div className="col-12 col-lg-6 d-flex d-flex-column gap-6">
                 <div className="d-flex d-flex-column gap-1">
                   <h6 className="f-500 l-20 text-black">
                     Instructor Name <sup className="text-error">*</sup>
@@ -197,7 +199,7 @@ function WebinarModal(props) {
                   />
                 </div>
               </div>
-              <div className="col-6 d-flex d-flex-column gap-4">
+              <div className="col-12 col-lg-6 d-flex d-flex-column gap-4">
                 <div className="d-flex d-flex-column gap-2">
                   <h6 className="f-500 l-20 text-black">Instructor Image</h6>
                   <div
@@ -297,7 +299,7 @@ function WebinarModal(props) {
           </svg>
           <div className="col-12 d-flex d-flex-column gap-5">
             <span className="h5 f-600 l-28 text-black">Webinar Details</span>
-            <div className="col-6 d-flex d-flex-column gap-6">
+            <div className="col-12 d-flex d-flex-column gap-6">
               <div className="d-flex d-flex-column gap-1">
                 <h6 className="f-500 l-20 text-black">
                   Webinar title <sup className="text-error">*</sup>
@@ -311,7 +313,7 @@ function WebinarModal(props) {
                   placeholder="Type the webinar title "
                 />
               </div>
-              <div className="d-flex gap-3">
+              <div className="d-flex d-flex-wrap gap-3">
                 <div className="d-flex d-flex-column gap-1">
                   <h6 className="f-500 l-20 text-black">
                     Start Date<sup className="text-error">*</sup>

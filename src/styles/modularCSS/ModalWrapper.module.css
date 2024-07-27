@@ -16,3 +16,10 @@
 .modal-verify {
     margin: 0 auto;
 }
+
+.modal-verify>div{
+    height: auto;
+    max-height: 600px;
+    overflow: hidden;
+    overflow-y: scroll;
+}

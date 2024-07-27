@@ -1,3 +1,8 @@
+.header{
+    top: 0;
+    z-index: 99;
+    position: sticky;
+}
 .imageContainer{
     width: 135px;
     height: 135px;
