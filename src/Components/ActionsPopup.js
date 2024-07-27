@@ -116,7 +116,7 @@ function ActionsPopup({ deleteHandler, editHandler }) {
             handler={deleteConfirmationHandler}
             closeHandler={() => setDelete(false)}
             title="Do you want to delete webinar?"
-            body="The webinar will removed from the database."
+            body="The webinar will be removed from the database."
             btn="btn-red"
             btnText="Delete webinar"
           ></Modal>

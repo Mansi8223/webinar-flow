@@ -20,14 +20,20 @@ function Table({
   };
 
   const deleteHandler = (index, itemToDelete) => {
+    //topic from entry to be deleted
     let deletedItemsTopic = itemToDelete.topic;
 
+    // Update the data to display
     let arr = data.filter((_, i) => i !== index);
     setData(arr);
+
+    // Update the original data
     let originalArr = originalData.filter((_, i) => i !== index);
     setOriginalData(originalArr);
 
+    // Check if the new topic is already in the topic array
     let topicExists = topicValidator(deletedItemsTopic, originalArr);
+    // remove topic from the dropdown array
     if (!topicExists) {
       const updatedTopics = topicArr.filter(
         (topic) => topic !== deletedItemsTopic
