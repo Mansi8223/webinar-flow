@@ -1,18 +1,18 @@
 import { useState, useEffect, Fragment } from "react";
 import { ToastContainer } from "react-toastify";
-// module imports
+import { toastError, toastSuccess } from "./Components/Toasters";
+// component imports
 import Base from "./Base/Base";
 import Table from "./Components/Table";
-import { toastError, toastSuccess } from "./Components/Toasters";
 import Header from "./Layout/Header";
 import WebinarModal from "./Modals/WebinarModal";
 import ModalWrapper from "./Modals/ModalWrapper";
+import Dropdown from "./Components/Dropdown";
 // style imports
 import "./styles/gap.css";
 import "./styles/global.css";
 import "./styles/structure.css";
 import "./styles/typography.css";
-import Dropdown from "./Components/Dropdown";
 
 function App() {
   const [searchTerm, setSearchTerm] = useState("");
